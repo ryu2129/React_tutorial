@@ -1,2 +1,4 @@
-#React.js & Next.js超入門学習用
+# React.js & Next.js超入門学習用
+
+## 概要
 サンプルコード等記載していきます。
