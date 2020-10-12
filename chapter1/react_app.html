@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8"  />
   <title>React</title>
-  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!--どちらも公開する際は、「development.js」ではなく「min.js」に変更するべき。-->
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script> <!--React本体-->
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> <!--Reactの仮装DOM-->
   <style>
     #root {
       cursor: pointer;
