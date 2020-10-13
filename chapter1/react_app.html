@@ -14,24 +14,45 @@
   <script type="text/babel"> //JSXを使うときはtype指定しないとダメ
   let dom = document.querySelector('#root');
 
-  let message = "メッセージを表示します。";
-
-  const msg = {
-    fontSize:"20pt", //font-sizeではない
-    fontWeight: "bold",
-    color:"red",
-    border:"2px solid green"
+  const dfn = {
+    fontSize: "20pt",
+    padding: "10px",
+  }
+  const dt = {
+    fontSize: "16px",
+    color: 'white',
+    backgroundColor:'#006',
+    padding:'10px',
+  }
+  const dd = {
+    color: 'black',
+    padding:'10px',
   }
 
-  let flg = true;
+  let data = {
+    url: 'http://google.com',
+    title: 'Google',
+    caption: '※Googleの検索サイトです。'
+  };
 
   let el = (
     <div>
-      {flg &&
-        <p style={msg}>{message}</p>
-      }
+      {(() =>
+        <dl>
+          <dt style={dt}><dfn style={dfn}>
+            {data.title}
+          </dfn></dt>
+          <dd style={dd}>
+            {data.caption}
+          </dd>
+          <dd style={dd}>
+            <a href={data.url}>※{data.title}に移動</a>
+          </dd>
+        </dl>
+        )()}
     </div>
   );
+
   ReactDOM.render(el, dom);
   </script>
 </body>
