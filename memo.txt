@@ -7,3 +7,9 @@
 ## publicフォルダとsrcフォルダの違い
 public →公開フォルダ。HTMLやCSSなど公開されるファイル類が保管される。
 src →Reactで作成したファイルなどがまとめられる.
+
+# chapter2
+<div>
+  <p>Hello</p>
+</div>
+・<div>,<p>Hello</p>,</div>は”エレメント”、それ以外のタブで開けた空白や開業の空白は”ノード”という。

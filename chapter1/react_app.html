@@ -21,15 +21,15 @@
   <script>
 
     let counter = 0;
-    let dom = document.querySelector('#root');
+    let dom = document.querySelector('#root'); //querySelectorというメソッドを使ってid="root"のオブジェクトを取り出している。
     doCount();
 
     function doCount() {
       counter++;
       let element = React.createElement(
         'p', {}, "count: " + counter
-    );
-    ReactDOM.render(element, dom);
+    );                                        //react特有の仮装DOMメソッドにてエレメントを作って組み込む
+    ReactDOM.render(element, dom);            //上記にて作成した仮装DOMエレメントをレンダリングにより表示する。
     }
   </script>
 </body>
