@@ -14,40 +14,45 @@
   <script type="text/babel"> //JSXを使うときはtype指定しないとダメ
   let dom = document.querySelector('#root');
 
-  const p = {
-    fontSize: "20pt",
-    padding: "10px",
-  };
-  const input = {
-    fontSize: "16pt",
-    padding: "5px 10px",
+  class Rect extends React.Component {
+    x = 0;
+    y = 0;
+    width = 0;
+    height = 0;
+    color = "white";
+    style = {};
+
+    constructor(props) {
+      super(props);
+      this.x = props.x;
+      this.y = props.y;
+      this.width = props.w;
+      this.height = props.h;
+      this.color = props.c;
+      this.style = {
+        backgroundColor:this.color,
+        position: "absolute",
+        left:this.x + "px",
+        top:this.y + "px",
+        width:this.width + "px",
+        height:this.height + "px"
+      }
+    }
+
+    render() {
+      return <div style={this.style}></div>;
+    }
   }
 
-  let message = 'お名前をどうぞ:';
-  let in_val = '';
-
-  let doChange = (event) => {
-    in_val = event.target.value;
-    message = 'こんにちは、 ' + in_val + 'さん！！';
-  };
-
-  let doAction = (event) => {
-    let el = (
+  // 表示するJSX
+  let el = (
     <div>
-      <p style={p}>{message}</p>
-      <div>
-        <input type="text" id="input" style={input}
-          onChange={doChange} />
-          <button onClick={doAction} style={input}>
-            Click
-          </button>
-      </div>
+      <Rect x="100" y="100" w="100" h="100" c="cyan" />
+      <Rect x="150" y="150" w="100" h="100" c="magenta" />
     </div>
-    );
-    ReactDOM.render(el, dom);
-  };
+  );
 
-  doAction();
+  ReactDOM.render(el, dom);
   </script>
 </body>
 </html>
