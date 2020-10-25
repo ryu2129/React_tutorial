@@ -4,16 +4,18 @@
 // propsを引数に受け取る
 // jsxをreturnする
 
-import React from 'react';
-import LikeButton from './LikeButton';
+import React, {useState} from 'react';
+// import LikeButton from './LikeButton';
 
 const Article = (props) => {
+  // isPublished→初期値がfalseのもの togglePublished→isPublishedを変更するものとして宣言
+  const [isPublished, togglePublished] = useState(true)
   return (
     <div>
       <h2>{props.title}</h2>
       <label htmlFor="check">公開状態:</label>
-      <input type="checkbox" checked={props.isPublished} id="check" onClick={() => props.toggle()} />
-      <LikeButton count={props.count} />
+      <input type="checkbox" checked={isPublished} id="check" onClick={() => togglePublished(!isPublished)} />
+      {/* <LikeButton count={props.count} /> */}
     </div>
   )
 };
