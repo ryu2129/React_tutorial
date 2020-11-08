@@ -5,7 +5,7 @@ const LikeButton = (props) => {
   const [limit, release] = useState(true);
 
   const countUp = () => {
-    counter(count + 1)
+    counter(count + 3)
   }
 
   useEffect(() => {
